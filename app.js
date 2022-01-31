@@ -1,9 +1,11 @@
+require('dotenv').config();
 const   express = require("express"),
         app = express(),
         mongoose = require("mongoose"),
         user = require("./models/user"),
         userRouter = require("./routes/user"),
         authRouter = require("./routes/auth"),
+        superHeroRouter = require("./routes/superHero"),
         port=3000;
      
 
@@ -14,6 +16,7 @@ const   express = require("express"),
     app.use(express.json());
     app.use("/users", userRouter);
     app.use("/",authRouter);
+    app.use("/superHero",superHeroRouter);
     mongoose.set("debug", true); // in devolpment process
     mongoose
     .connect(
