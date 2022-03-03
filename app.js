@@ -20,7 +20,7 @@ const   express = require("express"),
     mongoose.set("debug", true); // in devolpment process
     mongoose
     .connect(
-        "mongodb+srv://Ye:13102001@cluster0.tlzaw.mongodb.net/test", 
+        process.env.mongoURI, 
         {
         useNewUrlParser: true,
         useUnifiedTopology: true,
